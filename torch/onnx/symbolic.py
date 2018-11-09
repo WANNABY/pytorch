@@ -592,6 +592,8 @@ def elu(g, input, alpha, scale):
     # See Note [Export inplace]
     return g.op("Elu", input, alpha_f=_scalar(alpha))
 
+def log(g, self):
+    return g.op("Log", self)
 
 def selu(g, input):
     return g.op("Selu", input)
